@@ -9,7 +9,7 @@ Feature: Testing Account creation and Login Functionality of Codefish QA
   @positivelogin
   Scenario:
     When  User provides username and password and click login
-    Then User validate the  message 'Codefish QA' from homepage
+    Then User navigate to his account dashboard
 
   @negativelogin
   Scenario Outline:
@@ -19,7 +19,10 @@ Feature: Testing Account creation and Login Functionality of Codefish QA
     Examples:
       | username | password | errorMessage          |
       | test     | test1234 | Authentication failed |
-      | test1    | hahfl    | Authentication failed |
+      | test1    | 0000     | Authentication failed |
+      |          | test1234 | Authentication failed |
+      | test1    |          | Authentication failed |
+
 
 
 

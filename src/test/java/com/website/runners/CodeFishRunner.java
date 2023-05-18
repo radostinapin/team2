@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/website",
         glue = "com/website/stepdefinitions",
         dryRun = false,
-        tags = "@positivelogin",
+        tags = "@negativelogin",
         plugin = {"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"}
 
 )

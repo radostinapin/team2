@@ -29,9 +29,14 @@ public class CodefishLoginPage {
     @FindBy(linkText = "Codefish QA")
     WebElement message;
 
-
     @FindBy(xpath = "//button[contains(text(),'Login')]")
     WebElement loginButton;
+
+    @FindBy(linkText = "test1")
+    WebElement accountButton;
+
+    @FindBy(xpath = "//div[contains(text(),'Authentication failed')]")
+    WebElement errorMessage;
 
 
     public void createAccount(String username,String password) throws InterruptedException {
@@ -42,24 +47,31 @@ public class CodefishLoginPage {
         checkBox.click();
         registerButton.click();
         Thread.sleep(200);
-
     }
 
     public void validateMessage(String expectedMessage) throws InterruptedException {
         Assert.assertEquals(expectedMessage, BrowserUtils.getText(message));
     }
 
-    public void clearBox() throws InterruptedException {
-        username.clear();
-        Thread.sleep(500);
-        password.clear();
-        Thread.sleep(500);
-    }
-    public void login(String username,String password){
+
+    public void login(String username, String password){
+        this.username.clear();
         this.username.sendKeys(username);
+        this.password.clear();
         this.password.sendKeys(password);
         loginButton.click();
+
     }
+
+    public void enterAccount(){
+        accountButton.click();
+    }
+
+    public String validateErrorMessage(){
+        return BrowserUtils.getText(errorMessage);
+    }
+
+
 
 
 
