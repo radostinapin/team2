@@ -21,6 +21,7 @@ Feature: Testing Account creation and Login Functionality of Codefish QA
       | test     | test1234 | Authentication failed |
       | test1    | hahfl    | Authentication failed |
     |    hdgasd      |   ds       |      aad                 |
+    |            1225    |      df      |      dsfdfd                    |
 
 
 
