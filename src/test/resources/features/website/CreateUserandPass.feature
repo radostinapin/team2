@@ -22,11 +22,12 @@ Feature: Testing Account creation and Login Functionality of Codefish QA
       | test1    | 0000     | Authentication failed |
       |          | test1234 | Authentication failed |
       | test1    |          | Authentication failed |
-      |     ss     |          | Authentication failed |
+      |          |          | Authentication failed |
 
   @Category
 
   Scenario: Checking functionality of 'category'
+    When User provides username and password and click login
     When  User chooses 'category'
     Then User validates if the correct product and price are displaced.
 
