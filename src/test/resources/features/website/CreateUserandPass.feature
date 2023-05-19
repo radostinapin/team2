@@ -24,6 +24,11 @@ Feature: Testing Account creation and Login Functionality of Codefish QA
       | test1    |          | Authentication failed |
       |     ss     |          | Authentication failed |
 
+  @Category
+
+  Scenario: Checking functionality of 'category'
+    When  User chooses 'category'
+    Then User validates if the correct product and price are displaced.
 
 
 
