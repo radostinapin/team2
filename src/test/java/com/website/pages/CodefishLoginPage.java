@@ -38,6 +38,18 @@ public class CodefishLoginPage {
     @FindBy(xpath = "//div[contains(text(),'Authentication failed')]")
     WebElement errorMessage;
 
+    @FindBy(linkText = "qatest1")
+    WebElement qatest1Account;
+
+    @FindBy(xpath = "//button[contains(text(),'Delete account')]")
+    WebElement deleteQaAccount;
+
+    @FindBy(linkText = "admin")
+    WebElement admin;
+
+    @FindBy(linkText = "Logout")
+    WebElement logout;
+
 
     public void createAccount(String username,String password) throws InterruptedException {
         registerButton.click();
@@ -53,12 +65,23 @@ public class CodefishLoginPage {
         Assert.assertEquals(expectedMessage, BrowserUtils.getText(message));
     }
 
+    public void deleteAccount() throws InterruptedException {
+        qatest1Account.click();
+        Thread.sleep(100);
+        deleteQaAccount.click();
+        Thread.sleep(100);
 
-    public void login(String username, String password){
+    }
+
+
+    public void login(String username, String password) throws InterruptedException {
         this.username.clear();
+        Thread.sleep(300);
         this.username.sendKeys(username);
+        Thread.sleep(300);
         this.password.clear();
         this.password.sendKeys(password);
+        Thread.sleep(300);
         loginButton.click();
 
     }

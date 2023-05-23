@@ -10,8 +10,9 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features/website",
         glue = "com/website/stepdefinitions",
         dryRun = false,
-        tags = "@negativelogin",
-        plugin = {"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"}
+        tags = "@positivelogin",
+        plugin = {"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt",
+                  "json:target/cucumber-reports/cucumber.json"}
 
 )
 

@@ -22,7 +22,8 @@ Feature: Testing Account creation and Login Functionality of Codefish QA
       | test1    | 0000     | Authentication failed |
       |          | test1234 | Authentication failed |
       | test1    |          | Authentication failed |
-      |          |          | Authentication failed |
+
+
 
   @Category
 
