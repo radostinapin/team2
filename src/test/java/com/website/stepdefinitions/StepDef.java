@@ -23,9 +23,8 @@ public class StepDef {
     //register new user
     @When("User provides username and password and click register button")
     public void user_provides_username_and_password_and_click_register_button() throws InterruptedException {
-       loginPage.createAccount(ConfigReader.readProperty("username"),
-        ConfigReader.readProperty("password"));
-
+       loginPage.createAccount(ConfigReader.readProperty("username_OnlyForAccountCreation"),
+        ConfigReader.readProperty("password_OnlyForAccountCreation"));
     }
     @Then("User validate the  message {string} from homepage")
     public void user_validate_the_message_from_homepage(String expectedMessage) throws InterruptedException {
@@ -47,7 +46,7 @@ public class StepDef {
 
     //negative login
     @When("User provides {string} and {string} for CodeFish QA")
-    public void user_provides_and_for_code_fish_qa(String username, String password) {
+    public void user_provides_and_for_code_fish_qa(String username, String password) throws InterruptedException {
         loginPage.login(username,password);
     }
     @Then("User validate the,{string} error message")
