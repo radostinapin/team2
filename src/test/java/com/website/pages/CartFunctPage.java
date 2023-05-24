@@ -33,7 +33,7 @@ public class CartFunctPage {
     WebElement removeProdBtn;
 
     @FindBy(xpath = "//button[.='Remove']")
-    WebElement removeAllBtn;
+   List<WebElement >  removeAllBtn;
 
     @FindBy(xpath = "//div[@role='alert']")
     WebElement message;
@@ -63,10 +63,13 @@ public class CartFunctPage {
 
     }
 
-    public void clickRemoveBtn() throws InterruptedException {
-        Thread.sleep(3000);
-     removeAllBtn.click();
-        Thread.sleep(3000);
+    public void clickRemoveBtn(WebDriver driver) throws InterruptedException {
+
+        for(int i=0; i<removeAllBtn.size(); i++) {
+            Thread.sleep(3000);
+            BrowserUtils.clickWithJS(driver, removeAllBtn.get(i));
+            Thread.sleep(3000);
+        }
     }
 
     public String validateMessage(String expectedMessage) throws InterruptedException {

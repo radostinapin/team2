@@ -35,7 +35,7 @@ public class CartStepDef {
         }
         @When("User navigates and click to remove button")
         public void user_navigates_and_click_to_remove_button() throws InterruptedException {
-            cartFunctPage.clickRemoveBtn();
+            cartFunctPage.clickRemoveBtn(driver);
         }
     @Then("User validates {string}")
     public void user_validates_message(String expectedMessage) throws InterruptedException {
